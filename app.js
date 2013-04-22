@@ -6,7 +6,7 @@ var app = module.exports = express();
 var server = require('http').createServer(app);
 
 // Hook Socket.io into Express
-var io = require('socket.io').listen(server);
+socket.listen(server);
 
 // Configuration
 app.configure(function(){
@@ -32,9 +32,6 @@ app.get('/partials/:name', routes.partials);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
-
-// Socket.io Communication
-io.sockets.on('connection', socket);
 
 // Start server
 server.listen(3000, function(){

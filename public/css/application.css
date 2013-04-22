@@ -11,6 +11,14 @@
     vertical-align: middle;
 }
 
-.highlight {
+.robot.red {
+    background-color: red;
+}
+
+.robot.green {
     background-color: green;
+}
+
+.robot.blue {
+    background-color: blue;
 }

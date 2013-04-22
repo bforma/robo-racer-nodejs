@@ -23,4 +23,10 @@ angular.module('roboRacer.services', []).
                 })
             }
         };
+    }).factory('gameService', function() {
+        return {
+            down: function() {
+
+            }
+        };
     });
