@@ -1,0 +1,9 @@
+table.board
+    tbody
+        tr(ng-repeat='row in board')
+                td(ng-repeat='cell in row', ng-class='{highlight: highlight(cell)}') {{cell.coords.x}},{{cell.coords.y}}
+
+button(ng-click='up()') up
+button(ng-click='down()') down
+button(ng-click='left()') left
+button(ng-click='right()') right

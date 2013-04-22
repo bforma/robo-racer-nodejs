@@ -1,0 +1,13 @@
+extends layout
+
+block body
+  div(ng-controller='AppCtrl')
+    div(ng-view)
+
+  script(src='js/lib/angular/angular.js')
+  script(src='/socket.io/socket.io.js')
+  script(src='js/application.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
