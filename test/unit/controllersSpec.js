@@ -7,7 +7,7 @@ describe('Robo Racer controllers', function() {
             var scope = {},
                 ctrl = new GameCtrl(scope, socket);
 
-            expect(_.size(scope.players)).toBe(1);
+            expect(_.size(scope.players)).toBe(0);
         });
     });
 });
