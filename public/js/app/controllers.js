@@ -30,27 +30,23 @@ function GameCtrl($scope, socket) {
     };
 
     socket.on('player:list', function (players) {
-        _.each(players, function (player) {
-            $scope.players[player.id] = player;
-        });
+        $scope.players = players;
     });
 
     socket.on('player:connected', function (player) {
-        $scope.players[player.id] = (player);
+        $scope.players[player.id] = player;
     });
 
     socket.on('player:disconnected', function (player) {
         delete $scope.players[player.id];
     });
 
-    socket.on('game', function (game) {
+    socket.on('game:created', function (game) {
         $scope.board = [];
-        $scope.boardWidth = game.board.width;
-        $scope.boardHeight = game.board.height;
 
-        for (var y = 0; y < $scope.boardHeight; y++) {
+        for (var y = 0; y < game.board.height; y++) {
             $scope.board[y] = [];
-            for (var x = 0; x < $scope.boardWidth; x++) {
+            for (var x = 0; x < game.board.width; x++) {
                 $scope.board[y][x] = {coords: {x: x, y: y}};
             }
         }

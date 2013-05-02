@@ -16,7 +16,7 @@ module.exports.listen = function(app) {
         players[player.id] = player;
         toSelf('player:list', players);
         toOthers('player:connected', player);
-        toSelf('game', game);
+        toSelf('game:created', game);
 
         client.on('down', function () {
             if(player.coords.y < BOARD_HEIGHT - 1) {
