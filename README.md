@@ -10,7 +10,14 @@ install NVM (https://github.com/creationix/nvm)
 
 `npm install`
 
-`node app.js`
+## Development
+
+Use nodemon for automatic code reloading: `npm install -g nodemon`
+And start the app using: `nodemon app.js`
+
+Or don't use nodemon, and start the app with: `node app.js`
+
+And point your browser to http://localhost:3000
 
 ## Running tests
 
