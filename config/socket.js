@@ -7,8 +7,8 @@ var COLORS = ['red', 'green', 'blue'];
 var game = {board: {width: BOARD_WIDTH, height: BOARD_HEIGHT}};
 var players = {};
 
-module.exports.listen = function(app) {
-    io = socketio.listen(app);
+module.exports.listen = function(server) {
+    var io = socketio.listen(server);
 
     io.sockets.on('connection', function (client) {
         // TODO: is it really a good idea to expose the internal socket id?
